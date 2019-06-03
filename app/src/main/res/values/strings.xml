@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Blood Bank</string>
+    <string name="openNet"> برجاء تشغيل الانترنت</string>
+    <string name="phone">الجوال</string>
+    <string name="password">كلمه المرور</string>
+    <string name="forgetPassword">هل نسيت كلمه المرور</string>
+    <string name="login">دخول</string>
+    <string name="createEmail">انشاء حساب جديد</string>
+    <string name="saveAutologin">تذكرني</string>
+    <string name="title_activity_create_user">انشاء حساب جديد       </string>
+    <string name="name">الاسم</string>
+    <string name="email">البريد الالكتورني</string>
+    <string name="brithdate">تاريخ الميلاد</string>
+    <string name="blood">فصيله الدم</string>
+    <string name="passwordretey">تأكيد كلمه المرو</string>
+    <string name="lastdataofblod">اخر تاريخ للتبرع</string>
+    <string name="title_activity_center"></string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_donation__ask">Donation_Ask</string>
+    <string name="title_activity_notifi">NotifiActivity</string>
+</resources>
