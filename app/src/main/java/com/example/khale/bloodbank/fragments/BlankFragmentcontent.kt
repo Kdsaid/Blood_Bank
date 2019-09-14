@@ -6,46 +6,54 @@ import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentTransaction
 import android.support.v4.view.ViewPager
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
 import com.example.khale.bloodbank.R
-import com.example.khale.bloodbank.activities.DonationAskActivity
 import com.example.khale.bloodbank.adapters.ViewPagerAdapter
-import kotlinx.android.synthetic.main.fragment_blank_fragmentcontent.*
-import java.nio.FloatBuffer
 
 
-class BlankFragmentcontent : Fragment() {
+class BlankFragmentcontent : Fragment() ,View.OnClickListener{
+    override fun onClick(v: View?) {
+        val fragment = CreateDonationRequestFragment()
+        DiplayFragmentREplcae(fragment, v)
+    }
+
     private var tabLayout: TabLayout? = null
-    var viewPager: ViewPager? = null
+    private var viewPager: ViewPager? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        // Inflate the layout for this fragment
-
-        var view = inflater.inflate(R.layout.fragment_blank_fragmentcontent, container, false)
+        var view = inflater.inflate(R.layout.fragment_blank_fragmentcontent,
+                container, false)
 
         var viewPager = view.findViewById(R.id.viewpager) as ViewPager
         setupViewPager(viewPager)
 
        var  tabLayout = view.findViewById(R.id.tabs) as TabLayout
         tabLayout.setupWithViewPager(viewPager)
-       var fb=view.findViewById<FloatingActionButton>(R.id.fab)
-        fb.setOnClickListener {
-
-            startActivity(Intent(activity, DonationAskActivity::class.java))
-        }
+       val fb=view.findViewById<FloatingActionButton>(R.id.fab)
+        fb.setOnClickListener(this)
         return view
     }
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = ViewPagerAdapter(childFragmentManager)
-        adapter.addFragment(OneFragment(), "المقالات")
-        adapter.addFragment(TwoFragment(), "طلبات التبرع")
+        adapter.addFragment(OneFragment_article(), "المقالات")
+        adapter.addFragment(TwoFragment_donation(), "طلبات التبرع")
         viewPager.adapter = adapter
+    }
+    private fun DiplayFragmentREplcae(fragment: Fragment, v: View?) {
+
+        val activity = v!!.getContext() as AppCompatActivity
+
+        val fragmentTransaction: FragmentTransaction = activity.supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.container, fragment)
+        fragmentTransaction.commit()
     }
 
 }

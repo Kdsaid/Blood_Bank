@@ -1,6 +1,5 @@
 package com.example.khale.bloodbank.models
 
-import kotlinx.android.synthetic.main.item_row_fragment_two.view.*
 
 class item_row_fragment_two {
     var bloodType: String? = null

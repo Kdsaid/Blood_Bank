@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.khale.bloodbank">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.NETWORK" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -43,23 +47,17 @@
             android:name=".activities.NotifiActivity"
             android:label="@string/title_activity_notifi"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".activities.Edite_Notifiy" />
         <activity
             android:name=".activities.ReportActivity"
             android:label="@string/title_activity_notifi"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activities.ContactUSActivity"
-            android:label=""
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".activities.Donation_askedActivity"
-
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
-        </activity>
     </application>
 
 </manifest>

@@ -306,7 +306,7 @@ tools:context=".activities.Donation_askedActivity">
             app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/country_donation_create"
             android:layout_width="336dp"
             android:layout_height="37dp"
             android:text="TextView"
@@ -379,7 +379,7 @@ tools:context=".activities.Donation_askedActivity">
             android:layout_marginBottom="9dp"
             android:text="TextView"
             app:layout_constraintBottom_toTopOf="@+id/guideline11"
-            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/country_donation_create"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/guideline10" />
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grayOfwhite"
     tools:context=".fragments.BlankFragmentcontent">
 
 
@@ -28,8 +29,9 @@
                 android:layout_height="wrap_content"
                 app:tabGravity="fill"
                 app:tabMode="fixed"
-                app:tabSelectedTextColor="#000"
-                app:tabTextColor="#fff" />
+                app:tabSelectedTextColor="#F3F4F6"
+                app:tabBackground="@drawable/tab_color_selector"
+                app:tabTextColor="#5E6265" />
 
         </android.support.design.widget.AppBarLayout>
 

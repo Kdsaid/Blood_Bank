@@ -15,14 +15,18 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
+
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private var userinfo = User()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         btn_signup.setOnClickListener(this)
         bt_login.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View?) {
@@ -37,7 +41,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         val call = RetrofitClient
                 .getInstance()
-                .getApi()
+                .api
                 .loginUser(login_mobile.text.toString(),
                         login_password.text.toString()
                 )

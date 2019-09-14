@@ -6,9 +6,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class Datum_PostsModle {
 
+
     @SerializedName("id")
     @Expose
     private int id;
+    @SerializedName("is_favourite")
+    @Expose
+    private Boolean is_favourite;
     @SerializedName("created_at")
     @Expose
     private Object createdAt;
@@ -108,9 +112,17 @@ public class Datum_PostsModle {
     public void setThumbnailFullPath(String thumbnailFullPath) {
         this.thumbnailFullPath = thumbnailFullPath;
     }
+    public Boolean is_favourite() {
+        return is_favourite;
+    }
 
-    public Datum_PostsModle(int id, Object createdAt, Object updatedAt, String title, String content, String thumbnail, String publishDate, String categoryId, String thumbnailFullPath, Category_PostsModle category) {
+    public void is_favourite(Boolean is_favourite) {
+        this.is_favourite = is_favourite;
+    }
+
+    public Datum_PostsModle(int id, Boolean is_favourite, Object createdAt, Object updatedAt, String title, String content, String thumbnail, String publishDate, String categoryId, String thumbnailFullPath, Category_PostsModle category) {
         this.id = id;
+        this.is_favourite = is_favourite;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.title = title;

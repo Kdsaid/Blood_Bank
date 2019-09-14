@@ -47,7 +47,7 @@ class CreateUser : AppCompatActivity(), View.OnClickListener {
 
     fun initSpinnerType() {
 
-        val call = RetrofitClient.getInstance().getApi().getGovernment()
+        val call = RetrofitClient.getInstance().api.getGovernment()
         call.enqueue(
                 object : Callback<ListOfCourty> {
 
@@ -102,7 +102,7 @@ class CreateUser : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun getlistofcity(i: Int) {
-        val call = RetrofitClient.getInstance().getApi().getListCities(i)
+        val call = RetrofitClient.getInstance().api.getListCities(i)
         Log.i("selectedItem", "getCity");
         call.enqueue(object : Callback<ListOfCities> {
 
@@ -150,7 +150,7 @@ class CreateUser : AppCompatActivity(), View.OnClickListener {
 
         val call = RetrofitClient
                 .getInstance()
-                .getApi()
+                .api
                 .createUser(reg_name1.text.toString(),
                         reg_email.text.toString(),
                         "1990-07-21",

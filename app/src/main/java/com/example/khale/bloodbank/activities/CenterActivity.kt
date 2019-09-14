@@ -3,25 +3,23 @@ package com.example.khale.bloodbank.activities
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v4.view.GravityCompat
-import android.support.v4.view.ViewPager
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.example.khale.bloodbank.R
-import com.example.khale.bloodbank.adapters.ViewPagerAdapter
 import com.example.khale.bloodbank.fragments.BlankFragmentcontent
 import com.example.khale.bloodbank.fragments.EditeProfileFragment
-import com.example.khale.bloodbank.fragments.OneFragment
-import com.example.khale.bloodbank.fragments.TwoFragment
 
 import kotlinx.android.synthetic.main.activity_center.*
-import kotlinx.android.synthetic.main.activity_edite_profile.*
 import kotlinx.android.synthetic.main.app_bar_center.*
+import android.R.id.toggle
+import com.example.khale.bloodbank.fragments.Contact_US_Fragment
+
 
 class CenterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,16 +28,19 @@ class CenterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         setContentView(R.layout.activity_center)
         setSupportActionBar(toolbar)
 
-        val fragment =BlankFragmentcontent()
+
+        val fragment = BlankFragmentcontent()
         DiplayFragment(fragment)
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
+        toolbar.setNavigationIcon(R.drawable.menu)
 
         nav_view.setNavigationItemSelectedListener(this)
-        ////////////////////////
 
+
+        ////////////////////////
 
 
 //////////////////////////////
@@ -47,8 +48,6 @@ class CenterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     }
 
     /////////////////////////
-
-
 
 
     override fun onBackPressed() {
@@ -85,7 +84,7 @@ class CenterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_info -> {
-                val fragment =EditeProfileFragment()
+                val fragment = EditeProfileFragment()
                 DiplayFragment(fragment)
             }
             R.id.nav_notify_setting -> {
@@ -93,6 +92,8 @@ class CenterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
             }
             R.id.nav_favorite -> {
+                val fragment = EditeProfileFragment()
+                DiplayFragmentrep(fragment)
 
 
             }
@@ -107,8 +108,8 @@ class CenterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
             }
             R.id.nav_communicate -> {
-                startActivity(Intent(this@CenterActivity, ContactUSActivity::class.java))
-
+                val fragment = Contact_US_Fragment()
+                DiplayFragmentrep(fragment)
             }
 
             R.id.nav_rats -> {
@@ -129,8 +130,18 @@ class CenterActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
     fun DiplayFragment(fragment: Fragment) {
         var fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.container,fragment )
+        fragmentTransaction.add(R.id.container, fragment)
         fragmentTransaction.commit()
 
     }
+
+    fun DiplayFragmentrep(fragment: Fragment) {
+        var fragmentTransaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.container, fragment)
+
+        fragmentTransaction.commit()
+
+    }
+
+
 }
